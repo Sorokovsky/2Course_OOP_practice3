@@ -9,6 +9,6 @@ namespace Individual
 
         public abstract double Multiply(double number);
 
-        public abstract double Devide(double number);
+        public abstract double Divide(double number);
     }
 }

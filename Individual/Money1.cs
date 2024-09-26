@@ -43,22 +43,36 @@ namespace Individual
 
         public override double Add(double number)
         {
-            throw new NotImplementedException();
+            double inCops = ToNumber();
+            number *= 100;
+            return inCops + number;
         }
 
-        public override double Devide(double number)
+        public override double Divide(double number)
         {
-            throw new NotImplementedException();
+            if(number == 0) throw new DivideByZeroException("Can not divide by zero.");
+            number *= 100;
+            double inCops = ToNumber();
+            return inCops / number;
         }
 
         public override double Multiply(double number)
         {
-            throw new NotImplementedException();
+            number *= 100;
+            double inCops = ToNumber();
+            return inCops * number;
         }
 
         public override double Subtract(double number)
         {
-            throw new NotImplementedException();
+            number *= 100;
+            double inCops = ToNumber();  
+            return inCops - number;
+        }
+
+        private double ToNumber()
+        {
+            return GRN * 100 + Cop;
         }
     }
 }
