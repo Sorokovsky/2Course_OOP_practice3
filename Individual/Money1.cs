@@ -41,22 +41,22 @@ namespace Individual
             }
         }
 
-        public override void Add(double number)
+        public override double Add(double number)
         {
             throw new NotImplementedException();
         }
 
-        public override void Devide(double number)
+        public override double Devide(double number)
         {
             throw new NotImplementedException();
         }
 
-        public override void Multiply(double number)
+        public override double Multiply(double number)
         {
             throw new NotImplementedException();
         }
 
-        public override void Subtract(double number)
+        public override double Subtract(double number)
         {
             throw new NotImplementedException();
         }
