@@ -41,6 +41,22 @@ namespace Individual
             }
         }
 
+        public Money1(int grn, int cop)
+        {
+            GRN = grn;
+            Cop = cop;
+        }
+
+        public Money1(int grn) : this(grn, 0)
+        {
+            
+        }
+
+        public Money1() : this(0)
+        {
+            
+        }
+
         public override double Add(double number)
         {
             double inCops = ToNumber();
