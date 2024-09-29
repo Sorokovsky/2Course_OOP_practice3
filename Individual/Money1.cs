@@ -60,35 +60,36 @@ namespace Individual
         public override double Add(double number)
         {
             double inCops = ToNumber();
-            number *= 100;
             return inCops + number;
         }
 
         public override double Divide(double number)
         {
             if(number == 0) throw new DivideByZeroException("Can not divide by zero.");
-            number *= 100;
             double inCops = ToNumber();
             return inCops / number;
         }
 
         public override double Multiply(double number)
         {
-            number *= 100;
             double inCops = ToNumber();
             return inCops * number;
         }
 
         public override double Subtract(double number)
         {
-            number *= 100;
             double inCops = ToNumber();  
             return inCops - number;
         }
 
         private double ToNumber()
         {
-            return GRN * 100 + Cop;
+            return GRN * 0.100 + Cop;
         }
+
+        public override string ToString()
+        {
+            return $"{GRN}uah {Cop}cop";
+        } 
     }
 }
