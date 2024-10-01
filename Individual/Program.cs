@@ -104,9 +104,22 @@ public static class Program
             }
         }
         int resGrn = (int)result;
-        int resCop = (int)(result - resGrn);
+        int resCop;
+        try
+        {
+            var parts = result.ToString().Split(",");
+            Console.WriteLine(parts[1]);
+            int first = parts[1][0] - '0';
+            int secondNumber = parts[1][1] - '0';
+            resCop = (parts[1][0] - '0') * 10 + secondNumber;
+        }
+        catch (Exception)
+        {
+            resCop = 0;
+        }
         Money1 res = new(resGrn, resCop);
-        Console.WriteLine($"{_money1} {operation} {second} = {res}");
+        string sign = (result < 0 && resGrn == 0) ? "-" : string.Empty;
+        Console.WriteLine($"{_money1} {operation} {second} = {sign}{res}");
         _money2.ShowNominals(res);
     }
 }

@@ -2,44 +2,8 @@ namespace Individual
 {
     public class Money1 : Pair
     {
-        private int _grn;
-        private int _cop;
-        public int GRN 
-        {
-            get 
-            {
-                return _grn;
-            }
-            set
-            {
-                if(value < 0)
-                {
-                    _grn = 0;
-                }
-                else
-                {
-                    _grn = value;
-                }
-            }
-        }       
-        public int Cop
-        {
-            get
-            {
-                return _cop;
-            }
-            set
-            {
-                if(value < 0)
-                {
-                    _cop = 0;
-                }
-                else 
-                {
-                    _cop = value;
-                }
-            }
-        }
+        public int GRN { get; set; }       
+        public int Cop { get; set; }
 
         public Money1(int grn, int cop)
         {
@@ -60,31 +24,35 @@ namespace Individual
         public override double Add(double number)
         {
             double inCops = ToNumber();
-            return inCops + number;
+            double result = inCops + number;
+            return result;
         }
 
         public override double Divide(double number)
         {
             if(number == 0) throw new DivideByZeroException("Can not divide by zero.");
             double inCops = ToNumber();
-            return inCops / number;
+            double result = inCops / number;
+            return result;
         }
 
         public override double Multiply(double number)
         {
             double inCops = ToNumber();
-            return inCops * number;
+            double result = inCops * number;
+            return result;
         }
 
         public override double Subtract(double number)
         {
             double inCops = ToNumber();  
-            return inCops - number;
+            double result = inCops - number;
+            return result;
         }
 
         private double ToNumber()
         {
-            return GRN * 0.100 + Cop;
+            return GRN + (0.100 * Cop);
         }
 
         public override string ToString()
